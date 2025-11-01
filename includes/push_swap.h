@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/31 01:36:41 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/02 08:18:36 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,22 @@
 # define SUCCESS 0
 # define FAILURE -1
 
-# include <unistd.h>
-# include <stdlib.h>
 # include "../libft/libft.h"
 
-typedef struct s_node
+typedef struct s_list
 {
 	int				content;
-	struct s_node	*next;
-}	t_node;
-
-typedef struct stack 
-{
-	t_node	*top;
-	int		size;
-}	t_stack;
+	struct s_list	*next;
+	struct s_list	*prev;
+}	t_list;
 
 typedef struct s_stacks
 {
-	t_stack	stack_a;
-	t_stack	stack_b;
+	t_list	stack_a;
+	t_list	stack_b;
 }	t_stacks;
+
+int	parse_args(int argc, char **argv, t_list **stack_a);
+
 
 #endif

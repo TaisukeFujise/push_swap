@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 01:10:13 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/31 01:10:47 by tafujise         ###   ########.fr       */
+/*   Created: 2025/11/02 07:38:26 by tafujise          #+#    #+#             */
+/*   Updated: 2025/11/02 08:24:02 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	free_stack(t_stack *stack)
+int	init_stack(char **num_char_set, t_list *stack_a)
 {
+	int	*num_int_set;
+
+	num_int_set = ft_atoi_map(num_char_set);
+	
+}
+
+t_list	*ft_nodenew(int	content)
+{
+	t_list	*new_node;
+
 	
 }

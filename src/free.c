@@ -1,16 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 12:55:05 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/30 22:36:56 by tafujise         ###   ########.fr       */
+/*   Created: 2025/10/31 01:10:13 by tafujise          #+#    #+#             */
+/*   Updated: 2025/11/02 08:19:17 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	push_swap(int *stack_a, int *stack_b)
+#include "includes/push_swap.h"
+
+void	free_num_str(char **num_str)
+{
+	int	i;
+
+	i = 0;
+	while (num_str[i])
+	{
+		free(num_str[i]);
+		i++;
+	}
+	free(num_str);
+}
+
+void	free_stack(t_list *stack)
 {
 	
 }
+
