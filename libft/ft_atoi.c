@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 08:13:37 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/02 06:04:41 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/02 22:29:58 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-int	check_int_limits(long int num)
+int	round_int_limits(long int num)
 {
 	if (num < INT_MIN)
 		return (INT_MIN);
@@ -54,13 +54,5 @@ int	ft_atoi(const char *nptr)
 		num = num * 10 + (*nptr - '0');
 		nptr++;
 	}
-	return (check_int_limits(num * symbol));
-}
-
-#include <stdio.h>
-
-int main(void)
-{
-	char num[] = "2147483648";
-	printf("%d\n", ft_atoi(num));
+	return (round_int_limits(num * symbol));
 }
