@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/02 23:24:36 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/02 23:52:11 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	free_stack(t_list **stack);
 
 // utils.c
 int		ft_strcmp(const char *s1, const char *s2);
+char	**ft_str_arr_dup(char **str_arr);
 int		count_set_size(char **num_char_set);
 int		*ft_atoi_map(char **num_char_set);
 // list.c
