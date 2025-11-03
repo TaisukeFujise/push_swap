@@ -6,23 +6,23 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 08:55:06 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/02 22:20:39 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:32:01 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_lstnew(int	content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new_node;
 
-	new_node = (t_list*)malloc(sizeof(t_list));
+	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
 	new_node -> content = content;
 	new_node -> next = NULL;
 	new_node -> prev = NULL;
-	return new_node;
+	return (new_node);
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -35,7 +35,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		return ;
 	}
 	new -> next = *lst;
-	(*lst) -> prev = new;
+	(*lst)->prev = new;
 	*lst = new;
 	return ;
 }

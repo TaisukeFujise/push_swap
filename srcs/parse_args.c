@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:09:16 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/03 00:56:28 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:30:32 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,3 @@ int	parse_args(int argc, char **argv, t_list **stack_a)
 		return (free_num_char_set(num_char_set), FAILURE);
 	return (free_num_char_set(num_char_set), SUCCESS);
 }
-
-

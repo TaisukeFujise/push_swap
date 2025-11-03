@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:35:34 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/03 00:58:27 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:31:24 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (s1[i] == s2[i] && s1[i])
 		i++;
@@ -24,7 +24,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 char	**ft_str_arr_dup(char **str_arr)
 {
-	int	i;
+	int		i;
 	char	**dup_arr;
 
 	if (str_arr == NULL)
@@ -43,8 +43,7 @@ char	**ft_str_arr_dup(char **str_arr)
 				i--;
 				free((dup_arr)[i]);
 			}
-			free(dup_arr);
-			return (NULL);
+			return (free(dup_arr), NULL);
 		}
 		i++;
 	}
@@ -75,7 +74,7 @@ int	*ft_atoi_map(char **num_char_set)
 	num_int_set = (int *)malloc(sizeof(int) * (num_set_size));
 	if (!num_int_set)
 		return (NULL);
-	while(i < num_set_size)
+	while (i < num_set_size)
 	{
 		num_int_set[i] = ft_atoi(num_char_set[i]);
 		i++;

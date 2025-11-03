@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation.c                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 04:38:01 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:14:29 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:34:11 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	swap(t_list **stack)
 	if ((*stack)->next == NULL)
 		return ;
 	top_node = (*stack);
-	second_top_node = (*stack) -> next;
-	top_node -> prev = second_top_node;
-	top_node -> next = second_top_node -> next;
-	second_top_node -> next = top_node;
-	second_top_node -> prev = NULL;
+	second_top_node = (*stack)->next;
+	top_node->prev = second_top_node;
+	top_node->next = second_top_node->next;
+	second_top_node->next = top_node;
+	second_top_node->prev = NULL;
 	*stack = second_top_node;
 	if (top_node->next != NULL)
-		(top_node->next) -> prev = top_node;
+		(top_node->next)->prev = top_node;
 	return ;
 }
 
@@ -44,13 +44,11 @@ void	push(t_list **stack_from, t_list **stack_to)
 		return ;
 	stack_from_first = *stack_from;
 	stack_from_second = (*stack_from)->next;
-
-	stack_from_first -> next  = *stack_to;
-	stack_from_second -> prev = NULL;
-
-	(*stack_to) -> prev = stack_from_first;
+	stack_from_first->next = *stack_to;
+	stack_from_second->prev = NULL;
+	(*stack_to)->prev = stack_from_first;
 	*stack_from = stack_from_second;
-	*stack_to  = stack_from_first;
+	*stack_to = stack_from_first;
 	return ;
 }
 
@@ -67,7 +65,6 @@ void	rotate(t_list **stack)
 	top_node = *stack;
 	second_top_node = (*stack)->next;
 	bottom_node = ft_lstlast(*stack);
-
 	top_node->next = NULL;
 	top_node->prev = bottom_node;
 	second_top_node->prev = NULL;
@@ -88,8 +85,7 @@ void	reverse_rotate(t_list **stack)
 		return ;
 	top_node = *stack;
 	bottom_node = ft_lstlast(*stack);
-	second_bottom_node = bottom_node -> prev;
-
+	second_bottom_node = bottom_node->prev;
 	bottom_node->next = top_node;
 	bottom_node->prev = NULL;
 	second_bottom_node->next = NULL;
