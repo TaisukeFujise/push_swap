@@ -6,12 +6,12 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/02 23:17:53 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/04 07:00:45 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME := push_swap
+# BONUS_NAME := checker
 
 SRCDIR := srcs
 SRCS := check_error.c\
@@ -23,6 +23,8 @@ SRCS := check_error.c\
 		parse_args.c\
 		print_error.c\
 		utils.c\
+		sort.c\
+		operation.c\
 
 HEADDIR := includes
 HEADERS := $(HEADDIR)/ft_printf.h
@@ -57,4 +59,6 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+# bonus: 
+
+.PHONY: all clean fclean re bonus

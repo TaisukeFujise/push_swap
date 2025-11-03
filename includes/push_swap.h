@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/02 23:52:11 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 07:01:21 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,13 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 // init.c
-int	init_stack(char **num_char_set, t_list **stack_a);
+int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
-//void	do_sort(t_list **stack_a, t_list **stack_b)
+// void	do_sort(t_list **stack_a, t_list **stack_b);
+// operate.c
+void	swap(t_list **stack);
+void	push(t_list **stack_from, t_list **stack_to);
+void	rotate(t_list **stack);
+void	reverse_rotate(t_list **stack);
 
 #endif
