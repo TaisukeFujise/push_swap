@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 04:38:01 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:34:11 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 09:54:49 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,12 @@ void	push(t_list **stack_from, t_list **stack_to)
 		return ;
 	stack_from_first = *stack_from;
 	stack_from_second = (*stack_from)->next;
+	if (stack_from_second != NULL)
+		stack_from_second->prev = NULL;
+	stack_from_first->prev = NULL;
 	stack_from_first->next = *stack_to;
-	stack_from_second->prev = NULL;
-	(*stack_to)->prev = stack_from_first;
+	if ((*stack_to) != NULL)
+		(*stack_to)->prev = stack_from_first;
 	*stack_from = stack_from_second;
 	*stack_to = stack_from_first;
 	return ;
@@ -73,6 +76,7 @@ void	rotate(t_list **stack)
 	return ;
 }
 
+// debag
 void	reverse_rotate(t_list **stack)
 {
 	t_list	*top_node;
