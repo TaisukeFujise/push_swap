@@ -6,14 +6,14 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 23:12:48 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 10:56:38 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 14:12:59 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*impliment sort & print operations */
-void	bubble_sort(t_list **stack_a, t_list **stack_b)
+void	selection_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*top_node;
 	t_list	*second_top_node;
@@ -43,7 +43,7 @@ void	bubble_sort(t_list **stack_a, t_list **stack_b)
 		puts("pb");
 		push(stack_a, stack_b);
 	}
-	while (is_stack_empty(*stack_b) != SUCCESS)
+	while ((*stack_b) != NULL)
 	{
 		puts("pa");
 		push(stack_b, stack_a);

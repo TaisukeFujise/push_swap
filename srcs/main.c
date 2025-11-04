@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:25:04 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 10:47:40 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:40:33 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		free_stack(&stack_a);
 		return (print_error(), EXIT_FAILURE);
 	}
-	bubble_sort(&stack_a, &stack_b);
+	selection_sort(&stack_a, &stack_b);
 	print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

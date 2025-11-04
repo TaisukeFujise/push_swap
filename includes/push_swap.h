@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 10:56:46 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:40:33 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 // init.c
 int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
-void	bubble_sort(t_list **stack_a, t_list **stack_b);
+void	selection_sort(t_list **stack_a, t_list **stack_b);
 int		is_stack_sorted(t_list *stack);
 // operations.c
 void	swap(t_list **stack);
