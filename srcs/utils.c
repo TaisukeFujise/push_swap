@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:35:34 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:31:24 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 10:54:41 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,17 @@ int	*ft_atoi_map(char **num_char_set)
 		i++;
 	}
 	return (num_int_set);
+}
+
+int	is_stack_sorted(t_list *stack)
+{
+	if (stack == NULL || stack->next == NULL)
+		return (SUCCESS);
+	while (stack->next != NULL)
+	{
+		if ((stack->content) > (stack->next->content))
+			return (FAILURE);
+		stack = stack->next;
+	}
+	return (SUCCESS);
 }

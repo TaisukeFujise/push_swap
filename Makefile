@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/04 07:00:45 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/04 09:07:36 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS := check_error.c\
 		print_error.c\
 		utils.c\
 		sort.c\
-		operation.c\
+		operations.c\
 
 HEADDIR := includes
 HEADERS := $(HEADDIR)/ft_printf.h
