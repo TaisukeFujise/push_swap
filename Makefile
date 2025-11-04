@@ -6,12 +6,12 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/04 09:07:36 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/04 14:22:30 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-# BONUS_NAME := checker
+BONUS_NAME := checker
 
 SRCDIR := srcs
 SRCS := check_error.c\
@@ -26,13 +26,16 @@ SRCS := check_error.c\
 		sort.c\
 		operations.c\
 
+SRCS_BONUS := checker.c\
+
 HEADDIR := includes
 HEADERS := $(HEADDIR)/ft_printf.h
- 
+
 LIBFT_DIR := libft
 LIBFT := $(LIBFT_DIR)/libft.a
 
 OBJS := $(addprefix $(SRCDIR)/, $(SRCS:.c=.o))
+OBJS_BONUS := $(addprefix $(SRCDIR)/, $(SRCS_BONUS:.c=.o))
 
 CC := cc
 
@@ -47,18 +50,21 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(CC) -o $(NAME) $(OBJS) $(LIBFT)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
-	$(CC) $(CCFLAGS) -c $< -o $@ 
+	$(CC) $(CCFLAGS) -c $< -o $@
+
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(OBJS_BONUS) $(LIBFT)
+	$(CC) -o $(BONUS_NAME) $(OBJS_BONUS) $(LIBFT)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 	make clean -C $(LIBFT_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
-
-# bonus: 
 
 .PHONY: all clean fclean re bonus
