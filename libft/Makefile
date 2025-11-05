@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/12 09:41:21 by fujisetaisu       #+#    #+#              #
-#    Updated: 2025/10/19 21:48:09 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/05 23:01:17 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS := ft_isalpha.c\
 		ft_tolower.c\
 		ft_strchr.c\
 		ft_strrchr.c\
+		ft_strcmp.c\
 		ft_strncmp.c\
 		ft_memchr.c\
 		ft_memcmp.c\

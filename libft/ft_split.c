@@ -6,12 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:04:07 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:31:24 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:00:46 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {
