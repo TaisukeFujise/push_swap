@@ -6,21 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:35:34 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 10:54:41 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:04:55 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	size_t	i;
-
-	i = 0;
-	while (s1[i] == s2[i] && s1[i])
-		i++;
-	return ((int)((unsigned char)s1[i] - (unsigned char)s2[i]));
-}
 
 char	**ft_str_arr_dup(char **str_arr)
 {
@@ -93,4 +83,11 @@ int	is_stack_sorted(t_list *stack)
 		stack = stack->next;
 	}
 	return (SUCCESS);
+}
+
+int	is_stack_empty(t_list *stack)
+{
+	if (stack == NULL)
+		return (SUCCESS);
+	return (FAILURE);
 }
