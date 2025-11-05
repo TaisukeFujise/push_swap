@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:04:07 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/17 22:19:30 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 22:31:24 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_strndup(const char *src, size_t word_len)
+char	*ft_strndup(const char *src, size_t word_len)
 {
 	char	*ptr;
 

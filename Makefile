@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/05 19:53:28 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/05 22:36:25 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ SRCS_BONUS := checker.c\
 			print_error.c\
 			utils.c\
 			instructions.c\
-			sort_for_checker.c\
+			apply.c\
+			print_result.c\
+			get_next_line.c\
 
 HEADDIR := includes
 HEADERS := $(HEADDIR)/ft_printf.h
