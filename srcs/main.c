@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:25:04 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 20:02:59 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 20:09:53 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,9 @@ int	main(int argc, char **argv)
 	if (parse_args(argc, argv, &stack_a) == FAILURE)
 		return (print_error(), EXIT_FAILURE);
 	if (is_stack_sorted(stack_a) == SUCCESS)
-		return (free_stack(&stack_a), free_stack(&stack_b), EXIT_SUCCESS);
+		return (free_stacks(&stack_a, &stack_b), EXIT_SUCCESS);
 	selection_sort(&stack_a, &stack_b);
 	print_stack(stack_a);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	free_stacks(&stack_a, &stack_b);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:10:13 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/02 23:32:02 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 20:09:09 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,12 @@ void	free_stack(t_list **stack)
 		current = next;
 	}
 	*stack = NULL;
+	return ;
+}
+
+void	free_stacks(t_list **stack_a, t_list **stack_b)
+{
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return ;
 }

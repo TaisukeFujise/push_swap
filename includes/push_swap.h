@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 13:40:33 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 20:09:24 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		is_in_int_limits(char *num_str);
 // free.c
 void	free_num_char_set(char **num_char_set);
 void	free_stack(t_list **stack);
+void	free_stacks(t_list **stack_a, t_list **stack_b);
 // utils.c
 int		ft_strcmp(const char *s1, const char *s2);
 char	**ft_str_arr_dup(char **str_arr);
@@ -64,7 +65,9 @@ int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
 void	selection_sort(t_list **stack_a, t_list **stack_b);
 int		is_stack_sorted(t_list *stack);
-// operations.c
+// sort_for_check.c
+void	selection_sort_without_print(t_list **stack_a, t_list **stack_b);
+// instructions.c
 void	swap(t_list **stack);
 void	push(t_list **stack_from, t_list **stack_to);
 void	rotate(t_list **stack);
