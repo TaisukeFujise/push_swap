@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:36:49 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:35:54 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:41:23 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,16 @@ static char	*reflect_lines(int bytes, char **buffer, char **lines, int fd)
 {
 	char	*new_lines;
 
+	printf("bytes: %d\n", bytes);
+	printf("buffer: %s\n", *buffer);
+	printf("lines: %s\n", *lines);
+	printf("fd: %d\n", fd);
 	while (bytes > 0)
 	{
 		(*buffer)[bytes] = '\0';
+		printf("buffer: %s\n", *buffer);
 		new_lines = ft_strjoin(*lines, *buffer);
+		printf("new_lines: %s\n", new_lines);
 		free(*lines);
 		*lines = new_lines;
 		if (!(*lines))
@@ -50,7 +56,11 @@ static char	*read_until_nl(int fd, char *lines)
 	}
 	bytes = read(fd, buffer, BUFFER_SIZE);
 	if (!reflect_lines(bytes, &buffer, &lines, fd))
+	{
+		puts("!");
 		return (NULL);
+	}
+	printf("lines: %s\n", lines);
 	return (lines);
 }
 

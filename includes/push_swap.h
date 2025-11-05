@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:35:14 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:23:44 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,11 @@ void	free_num_char_set(char **num_char_set);
 void	free_stack(t_list **stack);
 void	free_stacks(t_list **stack_a, t_list **stack_b);
 // utils.c
-int		ft_strcmp(const char *s1, const char *s2);
 char	**ft_str_arr_dup(char **str_arr);
 int		count_set_size(char **num_char_set);
 int		*ft_atoi_map(char **num_char_set);
+int		is_stack_sorted(t_list *stack);
+int		is_stack_empty(t_list *stack);
 // list.c
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -71,7 +72,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
 void	selection_sort(t_list **stack_a, t_list **stack_b);
-int		is_stack_sorted(t_list *stack);
 // instructions.c
 void	swap(t_list **stack);
 void	push(t_list **stack_from, t_list **stack_to);

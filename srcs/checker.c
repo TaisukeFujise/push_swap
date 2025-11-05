@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:50:34 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:40:29 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:32:53 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	instruction = NULL;
 	if (argc < 2)
 		return (0);
 	if (parse_args(argc, argv, &stack_a) == FAILURE)
 		return (print_error(), 1);
+	// ここ以降でSVG
 	instruction = get_next_line(0);
+	puts("!");
 	while (instruction)
 	{
 		if (apply_instruction(instruction, &stack_a, &stack_b) == FAILURE)
@@ -32,6 +35,7 @@ int	main(int argc, char **argv)
 		free(instruction);
 		instruction = get_next_line(0);
 	}
+	puts("3");
 	if ((is_stack_sorted(stack_a) == FAILURE)
 		|| (is_stack_empty(stack_b) == FAILURE))
 		return (print_ko(), free_stacks(&stack_a, &stack_b), 1);
