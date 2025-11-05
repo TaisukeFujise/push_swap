@@ -6,13 +6,13 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 23:12:48 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 14:12:59 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/04 19:09:16 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*impliment sort & print operations */
+/*divide sort function and print function */
 void	selection_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*top_node;

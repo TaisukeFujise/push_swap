@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 07:38:26 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:30:07 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 09:26:19 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ int	init_stack(char **num_char_set, t_list **stack_a)
 	{
 		new_node = ft_lstnew(num_int_set[i]);
 		if (!new_node)
-		{
-			free(num_int_set);
-			return (FAILURE);
-		}
+			return (free(num_int_set), FAILURE);
 		ft_lstadd_back(stack_a, new_node);
 		i++;
 	}
