@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/05 22:36:25 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/05 23:57:16 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,19 @@ NAME := push_swap
 BONUS_NAME := checker
 
 SRCDIR := srcs
-SRCS := check_error.c\
+SRCS := main.c\
+		check_error.c\
 		free.c\
 		init_stack.c\
 		limits.c\
 		list.c\
-		main.c\
 		parse_args.c\
 		print_error.c\
 		utils.c\
 		sort.c\
 		instructions.c\
 
-SRCS_BONUS := checker.c\
+SRCS_BONUS := main_bonus.c\
 			check_error.c\
 			free.c\
 			init_stack.c\

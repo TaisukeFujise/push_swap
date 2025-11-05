@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 20:11:43 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 21:32:00 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/05 23:56:35 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	print_ok(void)
 {
-	write(1, "OK", 2);
+	write(1, "OK\n", 3);
 }
 
 void	print_ko(void)
 {
-	write(1, "KO", 2);
+	write(1, "KO\n", 3);
 }
