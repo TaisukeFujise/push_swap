@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:25:04 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:14:21 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/06 08:20:31 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 	if (is_stack_sorted(stack_a) == SUCCESS)
 		return (free_stacks(&stack_a, &stack_b), 0);
 	selection_sort(&stack_a, &stack_b);
-	// print_stack(stack_a);
 	free_stacks(&stack_a, &stack_b);
 	return (0);
 }

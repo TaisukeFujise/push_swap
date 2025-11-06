@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 23:23:44 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/06 09:21:27 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ typedef struct s_list
 // 	t_list	stack_a;
 // 	t_list	stack_b;
 // }	t_stacks;
+
+typedef enum e_op_type
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR
+}	t_op_type;
 
 // print_error.c
 void	print_error(void);
@@ -72,11 +87,16 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
 void	selection_sort(t_list **stack_a, t_list **stack_b);
-// instructions.c
+// instructions_1.c
 void	swap(t_list **stack);
+void	swap_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 void	push(t_list **stack_from, t_list **stack_to);
+void	push_and_print(t_list **stack_from, t_list **stack_to, t_op_type op);
+// instructions_2.c
 void	rotate(t_list **stack);
+void	rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 void	reverse_rotate(t_list **stack);
+void	rev_rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 //bonus
 // get_next_line.c
 char	*get_next_line(int fd);

@@ -6,13 +6,12 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 23:12:48 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 22:59:15 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/06 09:24:09 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-/*divide sort function and print function */
 void	selection_sort(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*top_node;
@@ -30,22 +29,14 @@ void	selection_sort(t_list **stack_a, t_list **stack_b)
 		while (i < size)
 		{
 			if ((top_node->content) < (second_top_node->content))
-			{
-				swap(stack_a);
-				puts("sa");
-			}
-			rotate(stack_a);
-			puts("ra");
+				swap_and_print(stack_a, stack_b, SA);
+			rotate_and_print(stack_a, stack_b, RA);
 			top_node = (*stack_a);
 			second_top_node = (*stack_a)->next;
 			i++;
 		}
-		puts("pb");
-		push(stack_a, stack_b);
+		push_and_print(stack_a, stack_b, PB);
 	}
 	while ((*stack_b) != NULL)
-	{
-		puts("pa");
-		push(stack_b, stack_a);
-	}
+		push_and_print(stack_a, stack_b, PA);
 }

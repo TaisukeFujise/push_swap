@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/05 23:57:16 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/06 09:19:47 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS := main.c\
 		print_error.c\
 		utils.c\
 		sort.c\
-		instructions.c\
+		instructions_1.c\
+		instructions_2.c\
 
 SRCS_BONUS := main_bonus.c\
 			check_error.c\
@@ -35,7 +36,8 @@ SRCS_BONUS := main_bonus.c\
 			parse_args.c\
 			print_error.c\
 			utils.c\
-			instructions.c\
+			instructions_1.c\
+			instructions_2.c\
 			apply.c\
 			print_result.c\
 			get_next_line.c\
