@@ -6,15 +6,15 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/06 09:19:47 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/07 08:58:02 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := push_swap
-BONUS_NAME := checker
+NAME:=push_swap
+BONUS_NAME:=checker
 
-SRCDIR := srcs
-SRCS := main.c\
+SRCDIR:=srcs
+SRCS:=main.c\
 		check_error.c\
 		free.c\
 		init_stack.c\
@@ -24,10 +24,14 @@ SRCS := main.c\
 		print_error.c\
 		utils.c\
 		sort.c\
-		instructions_1.c\
-		instructions_2.c\
+		operations_1.c\
+		operations_2.c\
+		calc_cost.c\
+		calc_operations.c\
+#		small_stack_sort.c\
+		
 
-SRCS_BONUS := main_bonus.c\
+SRCS_BONUS:=main_bonus.c\
 			check_error.c\
 			free.c\
 			init_stack.c\
@@ -36,26 +40,28 @@ SRCS_BONUS := main_bonus.c\
 			parse_args.c\
 			print_error.c\
 			utils.c\
-			instructions_1.c\
-			instructions_2.c\
+			operations_1.c\
+			operations_2.c\
 			apply.c\
 			print_result.c\
 			get_next_line.c\
 
-HEADDIR := includes
-HEADERS := $(HEADDIR)/ft_printf.h
+HEADDIR:=includes
+HEADERS:=$(HEADDIR)/ft_printf.h
 
-LIBFT_DIR := libft
-LIBFT := $(LIBFT_DIR)/libft.a
+LIBFT_DIR:=libft
+LIBFT:=$(LIBFT_DIR)/libft.a
 
-OBJS := $(addprefix $(SRCDIR)/, $(SRCS:.c=.o))
-OBJS_BONUS := $(addprefix $(SRCDIR)/, $(SRCS_BONUS:.c=.o))
+OBJS:=$(addprefix $(SRCDIR)/, $(SRCS:.c=.o))
+OBJS_BONUS:=$(addprefix $(SRCDIR)/, $(SRCS_BONUS:.c=.o))
 
-CC := cc
+CC:=cc
 
-CCFLAGS := -Wall -Wextra -Werror -I$(HEADDIR) -I$(LIBFT_DIR)
+CCFLAGS:=-Wall -Wextra -Werror -I$(HEADDIR) -I$(LIBFT_DIR)
 
-all: $(NAME)
+DEBUG_FLAGS:=-g -O0
+
+all:$(NAME)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
@@ -80,5 +86,11 @@ fclean: clean
 	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
+
+debug: CCFLAGS += $(DEBUG_FLAGS)
+debug:
+	$(MAKE) fclean
+	$(MAKE) -C $(LIBFT_DIR) CCFLAGS="$(CCFLAGS)" all
+	$(MAKE) CCFLAGS="$(CCFLAGS)" all
 
 .PHONY: all clean fclean re bonus

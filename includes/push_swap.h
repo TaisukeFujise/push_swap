@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/06 09:21:27 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/07 10:29:41 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 # include "../libft/libft.h"
 # include <fcntl.h>
+
+# define MIN(Value1, Value2) (((Value1) < (Value2)) ? (Value1) : (Value2))
 //test用
 # include <stdio.h>
 
@@ -54,6 +56,24 @@ typedef enum e_op_type
 	RRR
 }	t_op_type;
 
+/*それぞれの命令の実行回数を保持*/
+typedef struct s_ops
+{
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+}	t_ops;
+
+typedef struct s_best_move
+{
+	t_list			*node;
+	int				cost;
+	t_ops			*ops;
+}	t_best_move;
+
 // print_error.c
 void	print_error(void);
 // parse_args.c
@@ -86,17 +106,43 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 // init.c
 int		init_stack(char **num_char_set, t_list **stack_a);
 // sort.c
-void	selection_sort(t_list **stack_a, t_list **stack_b);
-// instructions_1.c
+void	do_sort(t_list **stack_a, t_list **stack_b);
+void	normal_stack_sort(t_list **stack_a, t_list **stack_b);
+void	init_best_move(t_best_move *best_move);
+void	init_ops(t_ops *ops);
+void	calc_best_move(t_best_move *best_move, t_list *stack_a, t_list *stack_b);
+void	update_best_move(t_best_move *best_move, t_list *node, int cost, t_ops *ops);
+void	repeat_op(t_list **stack_a, t_list **stack_b, t_op_type op, int freq);
+void	exec_best_move(t_best_move *best_move, t_list **stack_a, t_list **stack_b);
+
+// void	selection_sort(t_list **stack_a, t_list **stack_b);
+
+// small_stack_sort.c
+// void	small_stack_sort(t_list **stack_a, t_list **stack_b);
+
+// calc_cost.c
+int		calc_cost(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rr(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rrr(t_list *node, t_list *stack_a, t_list *stack_b);
+// calc_operations.c
+void	calc_operations(t_list *node, t_list *stack_a, t_list *stack_b, t_ops *ops);
+int		calc_cost_ra(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rb(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rra(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
+
+
+// operations_1.c
 void	swap(t_list **stack);
 void	swap_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 void	push(t_list **stack_from, t_list **stack_to);
-void	push_and_print(t_list **stack_from, t_list **stack_to, t_op_type op);
-// instructions_2.c
+void	push_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
+// operations_2.c
 void	rotate(t_list **stack);
 void	rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 void	reverse_rotate(t_list **stack);
 void	rev_rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
+
 //bonus
 // get_next_line.c
 char	*get_next_line(int fd);
