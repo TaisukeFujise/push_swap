@@ -66,6 +66,8 @@ int	calc_cost_rb(t_list *node, t_list *stack_a, t_list *stack_b)
 	while (node_b != NULL)
 	{
 		cost++;
+		if (node_b->next == NULL)
+			break;
 		if ((node_b->content < node->content)
 			&&(node->content < node_b->next->content))
 			return (cost);
@@ -104,6 +106,8 @@ int	calc_cost_rrb(t_list *node, t_list *stack_a, t_list *stack_b)
 	while (node_b != NULL)
 	{
 		cost++;
+		if (node_b->prev == NULL)
+			break;
 		if ((node_b->content < node->content)
 			&& (node->content < node_b->prev->content))
 			return (cost);
