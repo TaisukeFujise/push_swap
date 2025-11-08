@@ -85,20 +85,20 @@ void	rev_rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op)
 	if (op == RRA)
 	{
 		reverse_rotate(stack_a);
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 		return ;
 	}
 	else if (op == RRB)
 	{
 		reverse_rotate(stack_b);
-		write(1, "rrb\n", 3);
+		write(1, "rrb\n", 4);
 		return ;
 	}
 	else if (op == RRR)
 	{
 		reverse_rotate(stack_a);
 		reverse_rotate(stack_b);
-		write(1, "rrr\n", 3);
+		write(1, "rrr\n", 4);
 		return ;
 	}
 	else
