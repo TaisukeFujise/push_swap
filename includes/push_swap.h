@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/07 10:29:41 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 13:58:44 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <fcntl.h>
 
 # define MIN(Value1, Value2) (((Value1) < (Value2)) ? (Value1) : (Value2))
+# define MAX(Value1, Value2) (((Value1) > (Value2)) ? (Value1) : (Value2))
+
 //test用
 # include <stdio.h>
 
@@ -34,12 +36,6 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
-
-// typedef struct s_stacks
-// {
-// 	t_list	stack_a;
-// 	t_list	stack_b;
-// }	t_stacks;
 
 typedef enum e_op_type
 {
@@ -122,6 +118,10 @@ void	exec_best_move(t_best_move *best_move, t_list **stack_a, t_list **stack_b);
 
 // calc_cost.c
 int		calc_cost(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_ra_rb(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_ra_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rra_rb(t_list *node, t_list *stack_a, t_list *stack_b);
+int		calc_cost_rra_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
 int		calc_cost_rr(t_list *node, t_list *stack_a, t_list *stack_b);
 int		calc_cost_rrr(t_list *node, t_list *stack_a, t_list *stack_b);
 // calc_operations.c

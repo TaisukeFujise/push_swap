@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:25:04 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/07 06:47:13 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:48:18 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void	print_stack(t_list *stack)
 	}
 	while (stack != NULL)
 	{
-		printf("%d\n", stack -> content);
+		printf("%d", stack -> content);
 		stack = stack -> next;
 	}
+	puts("\n");
 }
 
 int	main(int argc, char **argv)

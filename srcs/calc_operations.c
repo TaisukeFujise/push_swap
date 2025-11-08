@@ -15,25 +15,39 @@
 //debug
 void	calc_operations(t_list *node, t_list *stack_a, t_list *stack_b, t_ops *ops)
 {
-	int	cost_rr;
-	int	cost_rrr;
+	int	cost_ra_rb;
+	int	cost_ra_rrb;
+	int	cost_rra_rb;
+	int	cost_rra_rrb;
 
-	cost_rr = calc_cost_rr(node, stack_a, stack_b);
-	cost_rrr = calc_cost_rrr(node, stack_a, stack_b);
-	// printf("cost_rr: %d\n", cost_rr);
-	// printf("cost_rrr: %d\n", cost_rrr);
-	if (cost_rr <= cost_rrr)
+	cost_ra_rb = calc_cost_ra_rb(node, stack_a, stack_b);
+	cost_ra_rrb = calc_cost_ra_rrb(node, stack_a, stack_b);
+	cost_rra_rb = calc_cost_rra_rb(node, stack_a, stack_b);
+	cost_rra_rrb = calc_cost_rra_rrb(node, stack_a, stack_b);
+	if (cost_ra_rb == calc_cost(node, stack_a, stack_b))
+	{
+		ops->ra = calc_cost_ra(node, stack_a, stack_b) - calc_cost_rr(node, stack_a, stack_b);
+		ops->rb = calc_cost_rb(node, stack_a, stack_b) - calc_cost_rr(node, stack_a, stack_b);
+		ops->rr = calc_cost_rr(node, stack_a, stack_b);
+	}
+	else if (cost_ra_rrb == calc_cost(node, stack_a, stack_b))
 	{
 		ops->ra = calc_cost_ra(node, stack_a, stack_b);
-		ops->rb = calc_cost_rb(node, stack_a, stack_b);
-		ops->rr = cost_rr;
+		ops->rrb = calc_cost_rrb(node, stack_a, stack_b);
 	}
-	else
+	else if (cost_rra_rb == calc_cost(node, stack_a, stack_b))
 	{
 		ops->rra = calc_cost_rra(node, stack_a, stack_b);
-		ops->rrb = calc_cost_rrb(node, stack_a, stack_b);
-		ops->rrr = cost_rrr;
+		ops->rb = calc_cost_rb(node, stack_a, stack_b);
 	}
+	else if (cost_rra_rrb == calc_cost(node, stack_a, stack_b))
+	{
+		ops->rra = calc_cost_rra(node, stack_a, stack_b) - calc_cost_rrr(node, stack_a, stack_b);
+		ops->rrb = calc_cost_rrb(node, stack_a, stack_b) - calc_cost_rrr(node, stack_a, stack_b);
+		ops->rrr = calc_cost_rrr(node, stack_a, stack_b);
+	}
+	else
+		print_error();
 	return ;
 }
 
