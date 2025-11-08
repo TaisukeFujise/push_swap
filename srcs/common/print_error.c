@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_result.c                                     :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:11:43 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 23:56:35 by tafujise         ###   ########.fr       */
+/*   Created: 2025/10/30 22:35:20 by tafujise          #+#    #+#             */
+/*   Updated: 2025/11/08 19:33:10 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	print_ok(void)
+void	print_error(void)
 {
-	write(1, "OK\n", 3);
-}
-
-void	print_ko(void)
-{
-	write(1, "KO\n", 3);
+	write(1, "Error\n", 6);
 }

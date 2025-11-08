@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 07:47:26 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:28:33 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:33:04 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	is_in_int_min(char *num_str)
 {

@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:36:49 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 23:54:33 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:32:44 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static char	*reflect_lines(int bytes, char **buffer, char **lines, int fd)
 {

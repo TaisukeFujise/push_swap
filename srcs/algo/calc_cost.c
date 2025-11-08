@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:47:57 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/07 19:14:06 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:32:15 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	calc_cost(t_list *node, t_list *stack_a, t_list *stack_b)
 {

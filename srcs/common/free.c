@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:10:13 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 20:09:09 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:32:55 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	free_num_char_set(char **num_char_set)
 {

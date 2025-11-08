@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/07 08:58:02 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/08 23:03:18 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,36 +15,38 @@ BONUS_NAME:=checker
 
 SRCDIR:=srcs
 SRCS:=main.c\
-		check_error.c\
-		free.c\
-		init_stack.c\
-		limits.c\
-		list.c\
-		parse_args.c\
-		print_error.c\
-		utils.c\
-		sort.c\
-		operations_1.c\
-		operations_2.c\
-		calc_cost.c\
-		calc_operations.c\
-#		small_stack_sort.c\
+		common/check_error.c\
+		common/free.c\
+		common/init.c\
+		common/limits.c\
+		common/parse_args.c\
+		common/print_error.c\
+		common/utils.c\
+		stack/list.c\
+		stack/operations_1.c\
+		stack/operations_2.c\
+		algo/sort.c\
+		algo/calc_cost.c\
+		algo/calc_operations.c\
+		algo/small_stack_sort.c\
+# 		test.c\
 		
 
 SRCS_BONUS:=main_bonus.c\
-			check_error.c\
-			free.c\
-			init_stack.c\
-			limits.c\
-			list.c\
-			parse_args.c\
-			print_error.c\
-			utils.c\
-			operations_1.c\
-			operations_2.c\
-			apply.c\
-			print_result.c\
-			get_next_line.c\
+			common/check_error.c\
+			common/free.c\
+			common/init.c\
+			common/limits.c\
+			common/parse_args.c\
+			common/print_error.c\
+			common/utils.c\
+			stack/list.c\
+			stack/operations_1.c\
+			stack/operations_2.c\
+			checker/apply.c\
+			checker/print_result.c\
+			checker/get_next_line.c\
+# 			test.c\
 
 HEADDIR:=includes
 HEADERS:=$(HEADDIR)/ft_printf.h

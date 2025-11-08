@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   small_stack_sort.c                                 :+:      :+:    :+:   */
+/*   print_result.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 08:22:49 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/06 19:56:48 by tafujise         ###   ########.fr       */
+/*   Created: 2025/11/05 20:11:43 by tafujise          #+#    #+#             */
+/*   Updated: 2025/11/08 19:32:47 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	small_stack_sort(t_list **stack_a, t_list **stack_b)
+void	print_ok(void)
 {
-	
+	write(1, "OK\n", 3);
+}
+
+void	print_ko(void)
+{
+	write(1, "KO\n", 3);
 }

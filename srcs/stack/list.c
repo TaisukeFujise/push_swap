@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 08:55:06 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/04 07:32:01 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:33:16 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_list	*ft_lstnew(int content)
 {

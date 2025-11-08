@@ -6,28 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:25:04 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/07 20:48:18 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 22:45:51 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	print_stack(t_list *stack)
-{
-	int	i;
-
-	if (stack == NULL)
-	{
-		puts("NULL");
-		return ;
-	}
-	while (stack != NULL)
-	{
-		printf("%d", stack -> content);
-		stack = stack -> next;
-	}
-	puts("\n");
-}
 
 int	main(int argc, char **argv)
 {

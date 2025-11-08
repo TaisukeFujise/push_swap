@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/08 13:58:44 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 23:02:31 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@
 
 # define MIN(Value1, Value2) (((Value1) < (Value2)) ? (Value1) : (Value2))
 # define MAX(Value1, Value2) (((Value1) > (Value2)) ? (Value1) : (Value2))
-
-//test用
-# include <stdio.h>
-
-// bonus
+/*bonus*/
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1056
 # endif
@@ -52,7 +48,6 @@ typedef enum e_op_type
 	RRR
 }	t_op_type;
 
-/*それぞれの命令の実行回数を保持*/
 typedef struct s_ops
 {
 	int	ra;
@@ -101,20 +96,22 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 // init.c
 int		init_stack(char **num_char_set, t_list **stack_a);
-// sort.c
-void	do_sort(t_list **stack_a, t_list **stack_b);
-void	normal_stack_sort(t_list **stack_a, t_list **stack_b);
 void	init_best_move(t_best_move *best_move);
 void	init_ops(t_ops *ops);
-void	calc_best_move(t_best_move *best_move, t_list *stack_a, t_list *stack_b);
-void	update_best_move(t_best_move *best_move, t_list *node, int cost, t_ops *ops);
-void	repeat_op(t_list **stack_a, t_list **stack_b, t_op_type op, int freq);
+// sort.c
+void	do_sort(t_list **stack_a, t_list **stack_b);
+void	main_stack_sort(t_list **stack_a, t_list **stack_b);
+void	init_best_move(t_best_move *best_move);
+void	init_ops(t_ops *ops);
+t_best_move	*calc_best_move(t_list *stack_a, t_list *stack_b);
+void	repeat_rotate(t_list **stack_a, t_list **stack_b, t_op_type op, int freq);
 void	exec_best_move(t_best_move *best_move, t_list **stack_a, t_list **stack_b);
-
-// void	selection_sort(t_list **stack_a, t_list **stack_b);
+t_list	*find_min_node(t_list *stack);
+int	get_node_pos(t_list *node, t_list *stack);
 
 // small_stack_sort.c
-// void	small_stack_sort(t_list **stack_a, t_list **stack_b);
+void	small_stack_sort(t_list **stack_a, t_list **stack_b);
+void	stack_sort_3(t_list **stack_a, t_list **stack_b);
 
 // calc_cost.c
 int		calc_cost(t_list *node, t_list *stack_a, t_list *stack_b);
@@ -153,4 +150,6 @@ void	print_ok(void);
 void	print_ko(void);
 // test用関数
 void	print_stack(t_list *stack);
+void	print_best_move(t_best_move *best_move);
+void	print_ops(t_ops *ops);
 #endif

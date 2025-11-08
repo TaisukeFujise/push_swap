@@ -6,11 +6,11 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 06:35:34 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 23:05:52 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:33:13 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 char	**ft_str_arr_dup(char **str_arr)
 {
