@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/08 23:03:18 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/09 08:06:54 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,16 @@ SRCS:=main.c\
 		common/parse_args.c\
 		common/print_error.c\
 		common/utils.c\
+		common/max_min.c\
 		stack/list.c\
 		stack/operations_1.c\
 		stack/operations_2.c\
 		algo/sort.c\
-		algo/calc_cost.c\
+		algo/calc_cost_1.c\
+		algo/calc_cost_2.c\
 		algo/calc_operations.c\
 		algo/small_stack_sort.c\
 # 		test.c\
-		
 
 SRCS_BONUS:=main_bonus.c\
 			common/check_error.c\
@@ -40,6 +41,7 @@ SRCS_BONUS:=main_bonus.c\
 			common/parse_args.c\
 			common/print_error.c\
 			common/utils.c\
+			common/max_min.c\
 			stack/list.c\
 			stack/operations_1.c\
 			stack/operations_2.c\

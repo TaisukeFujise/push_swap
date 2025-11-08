@@ -105,4 +105,3 @@ void	rev_rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op)
 		print_error();
 	return ;
 }
-
