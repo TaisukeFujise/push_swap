@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 11:04:07 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/05 23:00:46 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:23:18 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,15 +96,3 @@ char	**ft_split(char const *s, char c)
 	res[i] = NULL;
 	return (res);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char * * tab = ft_split("  tr ipo uill e  42  ", ' ');
-// 	while (*tab)
-// 	{
-// 		printf("%s\n", *tab);
-// 		tab++;
-// 	}
-// }

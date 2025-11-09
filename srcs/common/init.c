@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 07:38:26 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/08 19:32:59 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:14:20 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,19 @@ int	init_stack(char **num_char_set, t_list **stack_a)
 	return (free(num_int_set), SUCCESS);
 }
 
-void	init_best_move(t_best_move *best_move)
+int	init_best_move(t_best_move *best_move)
 {
 	if (!best_move)
-		return ;
+		return (FAILURE);
 	ft_memset(best_move, 0, sizeof(t_best_move));
 	best_move->cost = INT_MAX;
+	return (SUCCESS);
 }
 
-void	init_ops(t_ops *ops)
+int	init_ops(t_ops *ops)
 {
 	if (!ops)
-		return ;
+		return (FAILURE);
 	ft_memset(ops, 0, sizeof(t_ops));
+	return (SUCCESS);
 }

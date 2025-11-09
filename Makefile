@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/09 08:06:54 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/09 11:24:52 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,16 @@ SRCS:=main.c\
 		stack/list.c\
 		stack/operations_1.c\
 		stack/operations_2.c\
+		stack/repeat_rotate.c\
 		algo/sort.c\
 		algo/calc_cost_1.c\
 		algo/calc_cost_2.c\
-		algo/calc_operations.c\
+		algo/calc_cost_set.c\
+		algo/set_ops.c\
+		algo/calc_and_set_ops.c\
+		algo/find_node.c\
+		algo/main_stack_sort.c\
 		algo/small_stack_sort.c\
-# 		test.c\
 
 SRCS_BONUS:=main_bonus.c\
 			common/check_error.c\
@@ -45,10 +49,9 @@ SRCS_BONUS:=main_bonus.c\
 			stack/list.c\
 			stack/operations_1.c\
 			stack/operations_2.c\
-			checker/apply.c\
-			checker/print_result.c\
-			checker/get_next_line.c\
-# 			test.c\
+			checker/apply_bonus.c\
+			checker/print_result_bonus.c\
+			checker/get_next_line_bonus.c\
 
 HEADDIR:=includes
 HEADERS:=$(HEADDIR)/ft_printf.h

@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:17:06 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/17 22:20:34 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:22:52 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res[i] = '\0';
 	return (res);
 }
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char *s = ft_strtrim("tripouille   xxx", " x");
-// // 	char *s = ft_strtrim("   xxx   xxx", " x");
-// 	printf("%p", s);
-// }

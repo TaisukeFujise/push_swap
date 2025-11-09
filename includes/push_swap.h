@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 08:00:19 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:22:01 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 /*bonus*/
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1056
+#  define BUFFER_SIZE 10
 # endif
 
 typedef struct s_list
@@ -72,10 +72,11 @@ int			check_duplicates(char **num_char_set);
 void		free_num_char_set(char **num_char_set);
 void		free_stack(t_list **stack);
 void		free_stacks(t_list **stack_a, t_list **stack_b);
+void		free_best_move(t_best_move *best_move);
 // init.c
 int			init_stack(char **num_char_set, t_list **stack_a);
-void		init_best_move(t_best_move *best_move);
-void		init_ops(t_ops *ops);
+int			init_best_move(t_best_move *best_move);
+int			init_ops(t_ops *ops);
 // limits.c
 int			is_in_int_min(char *num_str);
 int			is_in_int_max(char *num_str);
@@ -112,37 +113,53 @@ void		rotate_and_print(t_list **stack_a, t_list **stack_b, t_op_type op);
 void		reverse_rotate(t_list **stack);
 void		rev_rotate_and_print(t_list **stack_a, t_list **stack_b,
 				t_op_type op);
+// repeat_rotate.c
+void		repeat_rotate(t_list **stack_a, t_list **stack_b,
+				t_op_type op, int count);
 // algo/
-// calc_cost.c
+// calc_cost_1.c
+int			calc_cost_ra(t_list *node, t_list *stack_a, t_list *stack_b);
+int			calc_cost_rb(t_list *node, t_list *stack_a, t_list *stack_b);
+int			calc_cost_rra(t_list *node, t_list *stack_a, t_list *stack_b);
+int			calc_cost_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
+// calc_cost_2.c
+int			calc_cost_rr(t_list *node, t_list *stack_a, t_list *stack_b);
+int			calc_cost_rrr(t_list *node, t_list *stack_a, t_list *stack_b);
+// calc_cost_set.c
 int			calc_cost(t_list *node, t_list *stack_a, t_list *stack_b);
 int			calc_cost_ra_rb(t_list *node, t_list *stack_a, t_list *stack_b);
 int			calc_cost_ra_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
 int			calc_cost_rra_rb(t_list *node, t_list *stack_a, t_list *stack_b);
 int			calc_cost_rra_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
-int			calc_cost_rr(t_list *node, t_list *stack_a, t_list *stack_b);
-int			calc_cost_rrr(t_list *node, t_list *stack_a, t_list *stack_b);
-// calc_operations.c
-void		calc_operations(t_list *node, t_list *stack_a,
+// set_ops.c
+void		set_ops_ra_rb(t_list *node, t_list *stack_a, t_list *stack_b,
+				t_ops *ops);
+void		set_ops_ra_rrb(t_list *node, t_list *stack_a, t_list *stack_b,
+				t_ops *ops);
+void		set_ops_rra_rb(t_list *node, t_list *stack_a, t_list *stack_b,
+				t_ops *ops);
+void		set_ops_rra_rrb(t_list *node, t_list *stack_a, t_list *stack_b,
+				t_ops *ops);
+// calc_and_set_ops.c
+void		calc_and_set_ops(t_list *node, t_list *stack_a,
 				t_list *stack_b, t_ops *ops);
-int			calc_cost_ra(t_list *node, t_list *stack_a, t_list *stack_b);
-int			calc_cost_rb(t_list *node, t_list *stack_a, t_list *stack_b);
-int			calc_cost_rra(t_list *node, t_list *stack_a, t_list *stack_b);
-int			calc_cost_rrb(t_list *node, t_list *stack_a, t_list *stack_b);
+
+// find_node.c
+t_list		*find_max_node(t_list *stack);
+t_list		*find_min_node(t_list *stack);
+int			get_node_pos(t_list *node, t_list *stack);
+// sort.c
+void		do_sort(t_list **stack_a, t_list **stack_b);
+// main_stack_sort.c
+void		main_stack_sort(t_list **stack_a, t_list **stack_b);
+t_best_move	*calc_best_move(t_list *stack_a, t_list *stack_b);
+int			update_best_move(t_best_move *best_move, t_list *node,
+				t_ops *ops, int cost);
+void		exec_best_move(t_best_move *best_move, t_list **stack_a,
+				t_list **stack_b);
 // small_stack_sort.c
 void		small_stack_sort(t_list **stack_a, t_list **stack_b);
 void		stack_sort_3(t_list **stack_a, t_list **stack_b);
-// sort.c
-void		do_sort(t_list **stack_a, t_list **stack_b);
-void		main_stack_sort(t_list **stack_a, t_list **stack_b);
-void		init_best_move(t_best_move *best_move);
-void		init_ops(t_ops *ops);
-t_best_move	*calc_best_move(t_list *stack_a, t_list *stack_b);
-void		repeat_rotate(t_list **stack_a, t_list **stack_b,
-				t_op_type op, int freq);
-void		exec_best_move(t_best_move *best_move, t_list **stack_a,
-				t_list **stack_b);
-t_list		*find_min_node(t_list *stack);
-int			get_node_pos(t_list *node, t_list *stack);
 // checker/
 // apply.c
 int			apply_instruction(char *instruction,
@@ -153,7 +170,4 @@ char		*get_next_line(int fd);
 void		print_ok(void);
 void		print_ko(void);
 // test用関数
-void		print_stack(t_list *stack);
-void		print_best_move(t_best_move *best_move);
-void		print_ops(t_ops *ops);
 #endif

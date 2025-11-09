@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 09:27:55 by tafujise          #+#    #+#             */
-/*   Updated: 2025/10/30 12:41:11 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:23:27 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char *s = ft_substr("tripouille", 100, 1);
-// 	puts(s);
-// }

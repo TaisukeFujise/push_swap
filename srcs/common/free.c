@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 01:10:13 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/08 19:32:55 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 10:49:04 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,13 @@ void	free_stacks(t_list **stack_a, t_list **stack_b)
 {
 	free_stack(stack_a);
 	free_stack(stack_b);
+	return ;
+}
+
+void	free_best_move(t_best_move *best_move)
+{
+	if (best_move->ops != NULL)
+		free(best_move->ops);
+	free(best_move);
 	return ;
 }
