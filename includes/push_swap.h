@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 11:58:39 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 12:19:36 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,4 +154,6 @@ void		exec_best_move(t_best_move *best_move, t_list **stack_a,
 // small_stack_sort.c
 void		small_stack_sort(t_list **stack_a, t_list **stack_b);
 void		stack_sort_3(t_list **stack_a, t_list **stack_b);
+void		stack_sort_4(t_list **stack_a, t_list **stack_b);
+void		stack_sort_5(t_list **stack_a, t_list **stack_b);
 #endif

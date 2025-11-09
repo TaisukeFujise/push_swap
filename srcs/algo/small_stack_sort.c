@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 08:22:49 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 08:03:01 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 12:36:58 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	small_stack_sort(t_list **stack_a, t_list **stack_b)
 {
-	int		pos;
-
 	if (ft_lstsize(*stack_a) <= 1)
 		return ;
 	else if (ft_lstsize(*stack_a) == 2)
@@ -23,16 +21,11 @@ void	small_stack_sort(t_list **stack_a, t_list **stack_b)
 	else if (ft_lstsize(*stack_a) == 3)
 		stack_sort_3(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) == 4)
-	{
-		pos = get_node_pos(find_min_node(*stack_a), *stack_a);
-		if (pos <= ft_lstsize(*stack_a) / 2)
-			repeat_rotate(stack_a, stack_b, RA, pos);
-		else
-			repeat_rotate(stack_a, stack_b, RRA, ft_lstsize(*stack_a) - pos);
-		push_and_print(stack_a, stack_b, PB);
-		stack_sort_3(stack_a, stack_b);
-		push_and_print(stack_a, stack_b, PA);
-	}
+		stack_sort_4(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) == 5)
+		stack_sort_5(stack_a, stack_b);
+	else
+		return ;
 }
 
 void	stack_sort_3(t_list **stack_a, t_list **stack_b)
@@ -62,4 +55,39 @@ void	stack_sort_3(t_list **stack_a, t_list **stack_b)
 	}
 	else
 		return ;
+}
+
+void	stack_sort_4(t_list **stack_a, t_list **stack_b)
+{
+	int	pos;
+
+	pos = get_node_pos(find_min_node(*stack_a), *stack_a);
+	if (pos <= ft_lstsize(*stack_a) / 2)
+		repeat_rotate(stack_a, stack_b, RA, pos);
+	else
+		repeat_rotate(stack_a, stack_b, RRA, ft_lstsize(*stack_a) - pos);
+	push_and_print(stack_a, stack_b, PB);
+	stack_sort_3(stack_a, stack_b);
+	push_and_print(stack_a, stack_b, PA);
+}
+
+void	stack_sort_5(t_list **stack_a, t_list **stack_b)
+{
+	int	pos;
+
+	pos = get_node_pos(find_min_node(*stack_a), *stack_a);
+	if (pos <= ft_lstsize(*stack_a) / 2)
+		repeat_rotate(stack_a, stack_b, RA, pos);
+	else
+		repeat_rotate(stack_a, stack_b, RRA, ft_lstsize(*stack_a) - pos);
+	push_and_print(stack_a, stack_b, PB);
+	pos = get_node_pos(find_min_node(*stack_a), *stack_a);
+	if (pos <= ft_lstsize(*stack_a) / 2)
+		repeat_rotate(stack_a, stack_b, RA, pos);
+	else
+		repeat_rotate(stack_a, stack_b, RRA, ft_lstsize(*stack_a) - pos);
+	push_and_print(stack_a, stack_b, PB);
+	stack_sort_3(stack_a, stack_b);
+	push_and_print(stack_a, stack_b, PA);
+	push_and_print(stack_a, stack_b, PA);
 }

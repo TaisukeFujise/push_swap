@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 10:05:54 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 11:14:09 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 12:30:50 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	main_stack_sort(t_list **stack_a, t_list **stack_b)
 		if (!best_move)
 			return ;
 		exec_best_move(best_move, stack_a, stack_b);
-		free(best_move->ops);
-		free(best_move);
-		best_move = NULL;
+		free_best_move(best_move);
 		best_move = NULL;
 	}
 	pos = get_node_pos(find_min_node(*stack_b), *stack_b);
