@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_cost_2.c                                      :+:      :+:    :+:   */
+/*   calc_cost_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 08:07:16 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 09:01:57 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:38:24 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int	calc_cost_rb(t_list *node_a, t_list *stack_a, t_list *stack_b)
 	int		cost;
 	t_list	*cur_node_b;
 
+	(void)stack_a;
 	cost = 0;
 	cur_node_b = stack_b;
 	if ((ft_lstsize(stack_b) < 2) || ((cur_node_b->content < node_a->content)
+			&& (node_a->content < ft_lstlast(stack_b)->content))
+		|| ((cur_node_b == find_max_node(stack_b))
 			&& (node_a->content < ft_lstlast(stack_b)->content)))
-		return (cost);
-	if ((cur_node_b == find_max_node(stack_b))
-		&& (node_a->content < ft_lstlast(stack_b)->content))
 		return (cost);
 	if (node_a->content < find_min_node(stack_b)->content)
 		return (get_node_pos(find_min_node(stack_b), stack_b) + 1);

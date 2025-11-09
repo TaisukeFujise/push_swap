@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:36:49 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/08 19:32:44 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:48:20 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes_bonus/push_swap_bonus.h"
 
 static char	*reflect_lines(int bytes, char **buffer, char **lines, int fd)
 {

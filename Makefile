@@ -6,7 +6,7 @@
 #    By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 12:42:52 by tafujise          #+#    #+#              #
-#    Updated: 2025/11/09 11:24:52 by tafujise         ###   ########.fr        #
+#    Updated: 2025/11/09 11:52:24 by tafujise         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS:=main.c\
 		algo/main_stack_sort.c\
 		algo/small_stack_sort.c\
 
+SRCDIR_BONUS:=srcs
 SRCS_BONUS:=main_bonus.c\
 			common/check_error.c\
 			common/free.c\
@@ -54,17 +55,20 @@ SRCS_BONUS:=main_bonus.c\
 			checker/get_next_line_bonus.c\
 
 HEADDIR:=includes
-HEADERS:=$(HEADDIR)/ft_printf.h
+HEADERS:=$(HEADDIR)/push_swap.h
+HEADDIR_BONUS:=includes_bonus
+HEADERS_BONUS:=$(HEADDIR_BONUS)/push_swap_bonus.h
 
 LIBFT_DIR:=libft
 LIBFT:=$(LIBFT_DIR)/libft.a
 
 OBJS:=$(addprefix $(SRCDIR)/, $(SRCS:.c=.o))
-OBJS_BONUS:=$(addprefix $(SRCDIR)/, $(SRCS_BONUS:.c=.o))
+OBJS_BONUS:=$(addprefix $(SRCDIR_BONUS)/, $(SRCS_BONUS:.c=.o))
 
 CC:=cc
 
 CCFLAGS:=-Wall -Wextra -Werror -I$(HEADDIR) -I$(LIBFT_DIR)
+CCFLAGS_BONUS:=-Wall -Wextra -Werror -I$(HEADDIR_BONUS) -I$(LIBFT_DIR)
 
 DEBUG_FLAGS:=-g -O0
 
@@ -78,6 +82,9 @@ $(NAME): $(OBJS) $(LIBFT)
 
 $(SRCDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
 	$(CC) $(CCFLAGS) -c $< -o $@
+
+$(SRCDIR_BONUS)/%.o: $(SRCDIR_BONUS)/%.c $(HEADERS_BONUS)
+	$(CC) $(CCFLAGS_BONUS) -c $< -o $@
 
 bonus: $(BONUS_NAME)
 
@@ -100,4 +107,4 @@ debug:
 	$(MAKE) -C $(LIBFT_DIR) CCFLAGS="$(CCFLAGS)" all
 	$(MAKE) CCFLAGS="$(CCFLAGS)" all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus debug

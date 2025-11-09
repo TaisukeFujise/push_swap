@@ -6,7 +6,7 @@
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 22:10:31 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 11:22:01 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:58:39 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 # define FAILURE -1
 
 # include "../libft/libft.h"
-# include <fcntl.h>
-
-/*bonus*/
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
 typedef struct s_list
 {
@@ -160,14 +154,4 @@ void		exec_best_move(t_best_move *best_move, t_list **stack_a,
 // small_stack_sort.c
 void		small_stack_sort(t_list **stack_a, t_list **stack_b);
 void		stack_sort_3(t_list **stack_a, t_list **stack_b);
-// checker/
-// apply.c
-int			apply_instruction(char *instruction,
-				t_list **stack_a, t_list **stack_b);
-// get_next_line.c
-char		*get_next_line(int fd);
-// print_result.c
-void		print_ok(void);
-void		print_ko(void);
-// test用関数
 #endif

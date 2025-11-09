@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_result_bonus.c                               :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:11:43 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/09 11:48:23 by tafujise         ###   ########.fr       */
+/*   Created: 2025/11/09 11:21:22 by tafujise          #+#    #+#             */
+/*   Updated: 2025/11/09 12:01:12 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes_bonus/push_swap_bonus.h"
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-void	print_ok(void)
-{
-	write(1, "OK\n", 3);
-}
+# include "../includes/push_swap.h"
 
-void	print_ko(void)
-{
-	write(1, "KO\n", 3);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+// checker/
+// apply.c
+int			apply_instruction(char *instruction,
+				t_list **stack_a, t_list **stack_b);
+// get_next_line.c
+char		*get_next_line(int fd);
+// print_result.c
+void		print_ok(void);
+void		print_ko(void);
+#endif

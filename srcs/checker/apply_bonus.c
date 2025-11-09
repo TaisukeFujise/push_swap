@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply.c                                            :+:      :+:    :+:   */
+/*   apply_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tafujise <tafujise@student.42.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 21:32:37 by tafujise          #+#    #+#             */
-/*   Updated: 2025/11/08 19:32:38 by tafujise         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:48:11 by tafujise         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "../../includes_bonus/push_swap_bonus.h"
 
 int	apply_instruction(char *instruction, t_list **stack_a, t_list **stack_b)
 {
